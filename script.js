@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
 
             // If there are no more departures today, calculate the time until the first departure tomorrow
-            if (nextDepartureTime === "No more departures today. Next departure tomorrow at ") {
+            if (nextDepartureTime === "Няма повече автобуси за днес. Следващо отпътуване утре от") {
                 const firstDepartureTomorrow = new Date();
                 firstDepartureTomorrow.setDate(firstDepartureTomorrow.getDate() + 1);
                 firstDepartureTomorrow.setHours(nextDepartureHour);
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const hoursUntilFirstDepartureTomorrow = Math.floor(timeUntilFirstDepartureTomorrow / 60);
                 const minutesUntilFirstDepartureTomorrow = timeUntilFirstDepartureTomorrow % 60;
 
-                resultsContainer.innerHTML += `Next departure tomorrow at ${nextDepartureHour}:${nextDepartureMinute}. It is in ${hoursUntilFirstDepartureTomorrow} hours and ${minutesUntilFirstDepartureTomorrow} minutes.`;
+                resultsContainer.innerHTML += `Следващо отпътуване утре от ${nextDepartureHour}:${nextDepartureMinute}. То е в ${hoursUntilFirstDepartureTomorrow} часа и ${minutesUntilFirstDepartureTomorrow} минути.`;
             }
         } else {
             resultsContainer.innerHTML = "<p>Няма намерен маршрут</p>";
